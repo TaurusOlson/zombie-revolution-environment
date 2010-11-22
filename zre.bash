@@ -59,11 +59,13 @@ while true ; do
 	# parse events and count it
 	random_event=$(($RANDOM % $(ls events/ | wc -l) + 1))
 	
-	# get random event
-	event=$(for i in $(ls events/) ; do cat events/$i | grep "()" | sed -e 's/() {//g' ; done | sed -n ${random_event}p)
-	
-	# exec randomized event 
-    $event
+    # execute random event
+    $(for event in $(ls events/); do
+        cat events/$event \
+        | grep "()" \
+        | sed -e 's/() {//g' 
+      done | sed -n ${random_event}p
+     )
 	
 	# check winner
     population
