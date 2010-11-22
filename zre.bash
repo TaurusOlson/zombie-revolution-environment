@@ -68,8 +68,12 @@ while true ; do
 	# check winner
     population
 
-	# increase day
-    time_goes_by
+    # daily message
+    if [ ${daily_msg:-on} = on ]; then
+        time_goes_by
+    fi 
+	
+    # increase day
 	((day++))
 
 	# fall asleep 

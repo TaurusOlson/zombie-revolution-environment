@@ -41,7 +41,7 @@ zombie_collectinging() {
 		echo "biohazard trash status: ($collectinglvl|$collecting)"
 	fi 
 		
-	# attack if rocket station is ready	
+	# attack if collecting is ready	
 	if [ $collectinglvl -ge $collecting ]; then
 		echo "ATTACK: the zombies send their filthy and contaminated trash to the humans!"
 		victims=$(($RANDOM % $humans + 1  * 2 ))

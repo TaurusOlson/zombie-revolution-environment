@@ -1,1 +1,5 @@
+# apple
 .DS_Store
+
+# dont apply local conf to github
+conf/zre.local
